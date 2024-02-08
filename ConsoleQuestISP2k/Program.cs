@@ -1,6 +1,13 @@
-﻿internal class Program
+﻿using ConsoleQuestISP2k;
+
+internal class Program
 {
     static char nextScene;
+    
+    /// <summary>
+    /// Вызов главной сцены.
+    /// </summary>
+    /// 
     private static void FirstScene()
     {
         //вывод на экран варианта сцены.
@@ -12,17 +19,25 @@
         Console.WriteLine("Выбор " + userChoose[0]);
         nextScene = userChoose[0];
     }
+    /// <summary>
+    /// Какой-то метод.
+    /// </summary>
+    /// <param name="a">Номер вызываемой сцены.</param>
+    private static void FirstScene(int a)
+    {
+        Console.WriteLine(a);
+    }
+
 
     private static char Scene0()
     {
-        //вывод на экран варианта сцены.
-        Console.WriteLine("Вы подошили к воротам техникума...\nВаши действия?");
-        Console.WriteLine("1. Пойти на пары");
-        Console.WriteLine("2. Уйти домой");
-        Console.WriteLine("3. Пойти за шавой");
-        string userChoose = Console.ReadLine();
-        Console.WriteLine("Выбор " + userChoose[0]);
-        
+        //вывод на экран варианта сцены.        
+            Console.WriteLine("Вы подошили к воротам техникума...\nВаши действия?");
+            Console.WriteLine("1. Пойти на пары");
+            Console.WriteLine("2. Уйти домой");
+            Console.WriteLine("3. Пойти за шавой");
+            string userChoose = Console.ReadLine();
+            Console.WriteLine("Выбор " + userChoose[0]);        
         switch (userChoose[0])
         {
             case '1':
@@ -54,6 +69,11 @@
     }
     private static void Main(string[] args)
     {
+        
+        
+         
+
+
         string myString;
         int helthPower = 100;
         int carmaVal = 0;
@@ -65,9 +85,9 @@
         Console.WriteLine(myString);
         */
         //инкапсуляция текстовой переменной.
-        Console.WriteLine($"Ваше здоровье: {helthPower}, карма {carmaVal}");
+        //Console.WriteLine($"Ваше здоровье: {helthPower}, карма {carmaVal}");
 
-        Scene0();
+        //Scene0();
 
         //вывод на экран варианта сцены.
         /*Console.WriteLine("Вы подошили к воротам техникума...\nВаши действия?");
@@ -131,5 +151,15 @@
         //        FirstScene();
         //        break;
         //}
+
+        Scenes Scenes1 = new Scenes();
+        Scenes1.SceneNumber = 0;
+        Scenes1.ScenePrompt = "dfksdkjfh ksdjhfkjdsh fksjdhf kjsdhf kjsdhf kjsdhf df";
+        Scenes1.PrintPrompt();
+
+        Scenes Scene2 = new Scenes(1, "Сцена 2.\nКогда я поел шаурмы");
+        Scene2.PrintPrompt();
+
+
     }
 }
